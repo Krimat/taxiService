@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Car list</h1>
+    <a href="{% url 'taxi:car-create' %}" class="button">New car</a>
+  {% if car_list %}
+      <form action="" method="get">
+      {% csrf_token %}
+      {{ search_form.as_p }}
+          <input type="submit" value="Search" class="btn">
+      </form>
+    <ul>
+      {% for car in car_list %}
+        <li>
+          <a href="{% url "taxi:car-detail" pk=car.id %} ">{{ car.id }}</a>
+          {{ car.model }} ({{ car.manufacturer.name }})
+            <a href="{% url 'taxi:car-update' pk=car.id%}">Update</a>
+            <a href="{% url 'taxi:car-delete' pk=car.id%}">Delete</a>
+        </li>
+
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no cars in taxi</p>
+  {% endif %}
+{% endblock %}

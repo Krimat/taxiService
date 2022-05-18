@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>
+        Manufacturer:{{ manufacturer.id }}
+    </title>
+{% endblock %}
+
+{% block content %}
+    <ul class="list-group">
+        <li>Name: {{ manufacturer.name }}</li>
+        <li>Country: {{ manufacturer.country }}</li>
+    </ul>
+    Back to all manufacturers <a href="{% url 'taxi:manufacturer-list' %}">list</a>
+{% endblock %}

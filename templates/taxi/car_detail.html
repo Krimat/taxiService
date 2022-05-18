@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p><a href="{% url 'taxi:manufacturer-detail' pk=car.manufacturer.id%}">Manufacturer</a>:
+      ({{ car.manufacturer.name }}, {{ car.manufacturer.country }})</p>
+  <p>Model: {{ car.model }}</p>
+    <p><a href="{% url 'taxi:car-update' pk=car.id%}">Update</a></p>
+    <p><a href="{% url 'taxi:car-delete' pk=car.id%}">Delete</a></p>
+  <h1>Drivers</h1>
+  <hr>
+  <ul>
+  {% for driver in car.drivers.all %}
+    <li>{{ driver.username }} ({{ driver.first_name }} {{ driver.last_name }})</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
