@@ -1,1 +1,1 @@
-web: gunicorn taxi_service.wsgi
+web: gunicorn taxi_service.wsgi.py

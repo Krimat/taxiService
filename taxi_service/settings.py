@@ -148,5 +148,3 @@ with open(file=CONFIG_FILE, mode='r') as fin:
                 "NAME": BASE_DIR / "db.sqlite3",
             }
         }
-
-
