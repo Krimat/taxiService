@@ -1,0 +1,5 @@
+{
+  "PRODUCTION": true,
+  "DEBUG": false,
+  "HOSTS": "taxi-service-proj.herokuapp.com"
+}
